@@ -1,9 +1,13 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/Users/paulr/Documents/WebsiteDev/personal/portfolio-astro",
     "paths": {
-      "@components/*": ["src/components/*"]
-    }
+      "@components/*": [
+        "src/components/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

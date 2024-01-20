@@ -6,6 +6,7 @@ import X from '@components/icons/X.astro';
 import GitHub from '@components/icons/GitHub.astro';
 import Projects from '@components/Projects.astro';
 import Experience from '@components/Experience.astro';
+import ContactForm from '@components/ContactForm';
 
 const baseStyles = 'max-w-7xl mx-auto';
 const yearDifference = new Date().getFullYear() - 2023;
@@ -57,15 +58,29 @@ const yearDifference = new Date().getFullYear() - 2023;
 					</p>
 
 					<div class="pb-5">
-						<a
-							href="https://www.linkedin.com/in/paul-richan-60684623b/"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="btn btn-sm btn-success"
+						<button class="btn btn-sm btn-success" onclick="my_modal_2.showModal()"
+							>Contact</button
 						>
-							Contact
-						</a>
-						<a href="/PaulRichan_Resume.pdf" class="btn btn-sm">Resume</a>
+						<dialog id="my_modal_2" class="modal">
+							<div class="modal-box">
+								<form method="dialog">
+									<button
+										class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+										>✕</button
+									>
+								</form>
+								<ContactForm client:load />
+							</div>
+							<form method="dialog" class="modal-backdrop">
+								<button>close</button>
+							</form>
+						</dialog>
+						<a
+							href="/PaulRichan_Resume.pdf"
+							class="btn btn-sm"
+							target="_blank"
+							rel="noopener noreferrer">Resume</a
+						>
 					</div>
 
 					<div class="grid grid-flow-col auto-cols-max gap-3">
