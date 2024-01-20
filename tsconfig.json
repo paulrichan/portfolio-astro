@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": "/Users/paulr/Documents/WebsiteDev/personal/portfolio-astro",
+    "baseUrl": ".",
     "paths": {
       "@components/*": [
         "src/components/*"
