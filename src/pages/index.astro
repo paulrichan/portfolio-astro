@@ -21,6 +21,23 @@ const yearDifference = new Date().getFullYear() - 2023;
 		<title>Paul Richan | Portfolio</title>
 
 		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+		<script>
+			// Toggle manager
+			const toggleTheme = document.querySelector('.toggle') as HTMLInputElement;
+			const currentTheme = localStorage.getItem('theme');
+			toggleTheme.checked = currentTheme === 'nord' ? false : true;
+		</script>
+
+		<script is:inline>
+			document.addEventListener('astro:after-swap', () => {
+				const localTheme = localStorage.getItem('theme');
+				const isDark = localTheme === 'business';
+				const theme = isDark ? 'business' : 'nord';
+
+				document.querySelector('html')['data-theme'] = theme;
+			});
+		</script>
 	</head>
 	<body>
 		<header
