@@ -1,0 +1,96 @@
+---
+import Project from './Project.astro';
+
+const projects: Project[] = [
+	{
+		img: '/pepiti-dash.png',
+		title: 'Video Game Stats App',
+		status: 'Hosted',
+		description: {
+			problem: `Indie developed video game stats are dumped into a mess of XML. Players can't keep track their progress efficiently.`,
+			solution: `A web app that parses the XML and displays the data in a clean and easy to understand
+			format. Players can also compare their stats with other players. The app also has a REST
+			API that can be used by other developers. Use of charts and graphs to display data.`,
+			tech: [
+				'React',
+				'Next.js',
+				'Typescript',
+				'TailwindCSS',
+				'MongoDB',
+				'Scripting',
+				'REST API',
+				'Python'
+			]
+		},
+		links: [
+			{
+				title: 'Visit',
+				url: 'https://pepiti.com'
+			}
+		]
+	},
+	{
+		img: '/all-home.png',
+		title: 'Applied Learning Labs',
+		status: 'WIP',
+		description: {
+			problem: `Online resources for individuals to study for the Board Certified Behavior Analyst exam are limited, expensive, and not user friendly. One exam can cost around $200 and is limited to one use. If you want to retake the exam you have to pay again and the questions and answers are the same. Also, my wife was studying for the exam and I wanted to help her out!`,
+			solution: `A web app that generates unique test questions for studying through the use of
+					artificial intelligence. The test results are saved to a SQL database. The user
+					dashboard aggregates their overall results and displays them through charts.
+					Each test session shows their results when they are done with additional
+					information regarding the topic, genre, and category of each question. Cost
+					structure is a monthly subscription fee that is much cheaper than the
+					competition. With the highest tier, users can take up to 900 questions a month.
+                    With Vercel and Cloudflare Workers generous free tiers, the application can
+                    serve thousands, maybe even hundreds of thousands requests a month for free. The only
+                    cost is the OpenAI api which is marginal per generation. LibSQL is used for the database
+                    and hosted on TursoDB which also has a very generous free tier. Keeping costs low is
+                    important for a solo developer.`,
+			tech: [
+				'React',
+				'Remix',
+				'Typescript',
+				'Shadcn/ui',
+				'Hono',
+				'Cloudflare Workers',
+				'SQL',
+				'AI',
+				'OpenAI'
+			]
+		},
+		links: [{ title: 'Preview', url: 'https://preview.appliedlearninglabs.org' }]
+	},
+	{
+		img: '/drawing-sockets.mov',
+		title: 'Drawing Sockets',
+		status: 'Local',
+		description: {
+			problem: `Minimal prior experience with web sockets + new web technologies and wanted to learn more about them.`,
+			solution: `A web app that allows users to draw on a canvas and have their drawings show up on
+			other users screens in real time. The backend is written in Elysia.js and the frontend
+			is written in Vite - React with Typescript. Bun also has to be used to run the server.
+			Bun has plug and play support for Elysia and web socket features like subscribing to
+			specific channels. I didn't end up using those features to there fullest extend but I
+			did get a good grasp on how to use them. Data is being written to disk with bun:sqlite
+			so that data is loaded on refresh. You will see @tanstack/router in the front end app
+			as well because I wanted to try it out. It is definitely not being used how it was
+			intended but was a good learning experience.`,
+			tech: ['React', 'Typescript', 'Tailwind', 'Elysia', 'Bun', 'SQL', 'Web Sockets']
+		},
+		links: [
+			{
+				title: 'GitHub Repo',
+				url: 'https://github.com/paulrichan/DrawingSockets',
+				icon: 'GitHub'
+			}
+		]
+	}
+];
+---
+
+{
+	projects.map((project, idx) => {
+		return <Project project={project} divider={idx !== projects.length - 1} />;
+	})
+}

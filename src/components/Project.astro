@@ -1,0 +1,78 @@
+---
+import GitHub from './icons/GitHub.astro';
+
+const { project, divider } = Astro.props as { project: Project; divider: boolean };
+const badgeStyle = {
+	WIP: 'badge-warning',
+	Hosted: 'badge-success',
+	Local: 'badge-error'
+};
+---
+
+<div class="flex flex-col md:flex-row gap-10 items-center">
+	<figure class="h-full w-1/3 min-w-[300px] rounded-md overflow-hidden">
+		{
+			project.img.includes('.mov') ? (
+				<video width="400" loop autoplay controls>
+					<source src="/drawing-sockets.mov" type="video/mp4" />
+				</video>
+			) : (
+				<img src={project.img} alt="project img" class="object-contain" />
+			)
+		}
+	</figure>
+
+	<section class="flex flex-col gap-3">
+		<h2 class="text-3xl font-bold">
+			{project.title}
+		</h2>
+		{
+			project?.status && (
+				<span class={`badge badge-outline ${badgeStyle[project.status]}`}>
+					{project.status}
+				</span>
+			)
+		}
+
+		<div>
+			<h3 class="underline">Problem:</h3>
+			<p class="">
+				{project.description.problem}
+			</p>
+		</div>
+
+		<div>
+			<h3 class="underline">Solution:</h3>
+			<p class="">
+				{project.description.solution}
+			</p>
+		</div>
+
+		<div>
+			<h3 class="underline">Tech:</h3>
+			<div class="flex gap-3 flex-wrap items-center md:max-w-[50%]">
+				{
+					project.description.tech.map((tech) => (
+						<div class="badge badge-outline">{tech}</div>
+					))
+				}
+			</div>
+		</div>
+
+		{
+			project.links?.map((link) => (
+				<a
+					class="btn btn-sm btn-success mt-5 w-[200px]"
+					href={link.url}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{link?.icon === 'GitHub' && <GitHub />}
+					{link.title}
+				</a>
+			))
+		}
+	</section>
+</div>
+
+{divider && <div class="divider w-1/3 md:w-1/5 mx-auto" />}

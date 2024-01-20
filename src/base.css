@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply antialiased;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    @apply text-2xl font-bold;
+}
+
+h2 {
+    @apply text-xl font-bold;
+}
+
+h3 {
+    @apply text-[1.05em] font-bold;
+}
+
+.circle {
+    display: flex;
+    background: center / 100% no-repeat url('/me.png');
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #fff; */
+    height: 110%;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    z-index: 2;
+    border-radius: 50%;
+    animation: wave 10s linear infinite;
+
+    @apply shadow-md;
+  }
+
+  .bg-wave:before {
+    content:'';
+    display: block;
+    background: transparent;
+    /* border: 1px solid #fff; */
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    height: 120%;
+    width: 120%;
+    z-index: 1;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: wave 10s linear infinite;
+    animation-delay: 1s;
+
+    @apply border-base-content border shadow-md;
+  }
+  
+ 
+  .bg-wave:after {
+    content:'';
+    display: block;
+    background: transparent;
+    /* border: 1px solid #fff; */
+    position: absolute;
+    top: -12.5%;
+    left: -12.5%;
+    height: 125%;
+    width: 125%;
+    z-index: 1;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: wave2 10s linear infinite;
+    animation-delay: 2s;
+
+    @apply border-base-content border shadow-md;
+  }
+  
+  @keyframes wave {
+      0%{ 
+          border-radius: calc(50% + 10px) calc(50% - 10px) calc(50% + 8px)  calc(50% - 2px); 
+  /* 		transform: rotate(0deg); */
+      }
+      16.6%{
+          border-radius: calc(50% + 8px) calc(50% + 8px)  calc(50% + 8px) calc(50% + 10px); 
+      }
+      33.2%{
+          border-radius: calc(50% - 2px) calc(50% + 12px)  calc(50% + 2px) calc(50% + 10px);
+      }
+      49.8%{
+          border-radius: calc(50% + 8px) calc(50% + 10px) calc(50% - 2px) calc(50% - 6px);
+      }
+    66.4%{
+          border-radius: calc(50% + 10px) calc(50% + 12px) calc(50% - 2px) calc(50% - 6px);
+      }
+    83%{
+          border-radius: calc(50% - 2px) calc(50% + 12px) calc(50% + 10px) calc(50% - 6px);
+      }
+      100%{ 
+          border-radius: calc(50% + 6px) calc(50% - 6px) calc(50% + 8px)  calc(50% - 2px);
+  /* 		transform: rotate(360deg); */
+      }
+  }
+  
+  @keyframes wave2 {
+      0%{ 
+          border-radius: calc(50% + 10px) calc(50% - 10px) calc(50% + 8px)  calc(50% - 8px); 
+      }
+      80%{
+          border-radius: calc(50% + 8px) calc(50% + 8px)  calc(50% + 8px) calc(50% + 10px); 
+      }
+      50%{
+          border-radius: calc(50% - 2px) calc(50% + 12px)  calc(50% - 6px) calc(50% + 10px);
+      }
+      10%{
+          border-radius: calc(50% + 12px) calc(50% + 10px) calc(50% - 2px) calc(50% - 4px);
+      }
+      100%{ 
+          border-radius: calc(50% + 10px) calc(50% - 6px) calc(50% + 8px)  calc(50% - 8px);
+  /* 		transform: rotate(360deg); */
+      }
+  }

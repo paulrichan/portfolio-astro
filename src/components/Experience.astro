@@ -1,0 +1,74 @@
+---
+import TimelineItem from './TimelineItem.astro';
+
+export const jobs: Job[] = [
+	{
+		company: 'Chicago Cubs',
+		date: '2018 - 2019',
+		description:
+			'Drafted 78th overall in the 2018 MLB Draft by the Chicago Cubs. Played 1 season in the minor leagues before being traded to the Detroit Tigers with Alex Lange for Nick Castellanos.',
+		title: 'Professional Baseball Player'
+	},
+	{
+		company: 'Detroit Tigers',
+		date: '2019 - 2022',
+		description:
+			'Joined the Detroit Tigers organization in the middle of the minor league season in 2019. Advanced to the AA level in 2021 before sustaining a shoulder injury that required surgery. Retired from playing baseball in 2022.',
+		title: 'Professional Baseball Player'
+	},
+	{
+		company: 'ITZ Development',
+		date: '2022 - 2023',
+		description:
+			'Worked on Kittr that gathered kit setups for the popular game series Call of Duty. Streamers could make an account, mock their kits from in game, and automatically produce chat bot commands that would link their users directly to the weapon kit that they are using. Currently unmaintained.',
+		title: 'Full Stack Web Developer (Contract)',
+		frontend: ['React', 'Next.js', 'TailwindCSS'],
+		backend: [
+			'Prisma',
+			'Typescript',
+			'Javascript',
+			'MongoDB',
+			'Docker',
+			'Firebase Auth',
+			'MongoDB'
+		]
+	},
+	{
+		company: 'DS Sports',
+		date: 'Jun 2023 - Nov 2023',
+		description:
+			'Helped develop cutting edge software for state of art hardware capturing ball flight data for baseball and softball on the collegiate and professional level. Migrated legacy data to a brand new REST api. Setup the infrastructure in Azure and migrated legacy codebase from AWS. Bootstrapped a Next.js frontend to pave the way for revamped software.',
+		title: 'Full Stack Web Developer',
+		frontend: [
+			'React',
+			'Next.js',
+			'Figma',
+			'Svelte',
+			'SvelteKit',
+			'TailwindCSS',
+			'Shadcn/ui',
+			'Mantine'
+		],
+		backend: [
+			'Prisma',
+			'Typescript',
+			'Javascript',
+			'Azure',
+			'Bicep [IaC]',
+			'Node.js',
+			'SQL',
+			'MongoDB',
+			'Python',
+			'FastAPI',
+			'Websockets'
+		]
+	}
+];
+---
+
+{
+	jobs.map((job, idx) => {
+		const timelinePosition = idx % 2 === 0 ? 'timeline-start' : 'timeline-end';
+		return <TimelineItem job={job} start={idx === 0} timelinePosition={timelinePosition} />;
+	})
+}
