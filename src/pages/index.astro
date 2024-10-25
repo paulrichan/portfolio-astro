@@ -12,15 +12,15 @@ const baseStyles = 'max-w-7xl mx-auto';
 const yearDifference = new Date().getFullYear() - 2023;
 ---
 
-<html lang="en" data-theme="nord">
+<html lang='en' data-theme='nord'>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
 		<title>Paul Richan | Portfolio</title>
 
-		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+		<script src='https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js'></script>
 
 		<script>
 			// Toggle manager
@@ -41,40 +41,38 @@ const yearDifference = new Date().getFullYear() - 2023;
 	</head>
 	<body>
 		<header
-			class={`${baseStyles} z-20 flex border bg-base-100 border-base-content/20 rounded-full sticky top-5 mt-3 p-3 w-[95%] max-w-[400px] shadow-md`}
-		>
-			<nav class="flex justify-around flex-1">
-				<a href="#">Home</a>
-				<a href="#experience">Experience</a>
-				<a href="#projects">Projects</a>
-				<ThemeController />
+			class={`${baseStyles} z-20 flex border bg-base-100 border-base-content/20 rounded-full sticky top-5 mt-3 p-3 w-[95%] max-w-[400px] shadow-md`}>
+			<nav class='flex justify-around flex-1'>
+				<a href='#'>Home</a>
+				<a href='#experience'>Experience</a>
+				<a href='#projects'>Projects</a>
+				<!-- <ThemeController /> -->
 			</nav>
 		</header>
 
 		<main class={`${baseStyles} min-h-screen w-full`}>
 			<section
-				class="grid grid-cols-1 h-5/6 md:grid-cols-2 justify-center gap-10 md:gap-36 items-center md:h-[600px] flex-1"
-			>
-				<div class="relative h-40 w-40 mx-auto mt-32 md:mt-0 md:ml-auto md:mx-0">
-					<div class="circle"></div>
-					<div class="bg-wave"></div>
+				class='grid grid-cols-1 h-5/6 md:grid-cols-2 justify-center gap-10 md:gap-36 items-center md:h-[600px] flex-1'>
+				<div class='relative h-40 w-40 mx-auto mt-32 md:mt-0 md:ml-auto md:mx-0'>
+					<div class='circle'></div>
+					<div class='bg-wave'></div>
 				</div>
 
-				<div class="mx-auto md:mx-0 px-2">
-					<h1 class="text-3xl">
+				<div class='mx-auto md:mx-0 px-2'>
+					<h1 class='text-3xl'>
 						Hello, my name is
 						<br />
-						<span class="text-error font-bold"> Paul Richan</span>
+						<span class='text-error font-bold'> Paul Richan</span>
 					</h1>
-					<p class="max-w-[400px] text-lg py-5 leading-relaxed">
+					<p class='max-w-[400px] text-lg py-5 leading-relaxed'>
 						I am
-						<span class="font-semibold underline">former professional athlete</span> turned
-						<span class="font-semibold underline">self-taught</span> full stack web developer
+						<span class='font-semibold underline'>former professional athlete</span> turned
+						<span class='font-semibold underline'>self-taught</span> full stack web developer
 						with
 						{yearDifference}+ years of professional experience.
 					</p>
 
-					<div class="pb-5">
+					<div class='pb-5'>
 						<!-- <button class="btn btn-sm btn-success" onclick="my_modal_2.showModal()"
 							>Contact</button
 						>
@@ -92,53 +90,51 @@ const yearDifference = new Date().getFullYear() - 2023;
 								<button>close</button>
 							</form>
 						</dialog> -->
-						<a
-							href="/PaulRichan_Resume.pdf"
-							class="btn btn-sm btn-success"
-							target="_blank"
-							rel="noopener noreferrer">Resume</a
-						>
+						<!-- <a
+							href='/PaulRichan_Resume.pdf'
+							class='btn btn-sm btn-success'
+							target='_blank'
+							rel='noopener noreferrer'>Resume</a
+						> -->
 					</div>
 
-					<div class="grid grid-flow-col auto-cols-max gap-3">
+					<div class='grid grid-flow-col auto-cols-max gap-3'>
 						<a
-							href="https://github.com/paulrichan"
-							class="btn btn-sm btn-ghost btn-square"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
+							href='https://github.com/paulrichan'
+							class='btn btn-sm btn-ghost btn-square'
+							target='_blank'
+							rel='noopener noreferrer'>
 							<GitHub />
 						</a>
 						<a
-							href="https://www.linkedin.com/in/paul-richan-60684623b/"
-							class="btn btn-sm btn-ghost btn-square"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="btn btn-sm btn-ghost btn-square"><LinkedIn /></a
+							href='https://www.linkedin.com/in/paul-richan-60684623b/'
+							class='btn btn-sm btn-ghost btn-square'
+							target='_blank'
+							rel='noopener noreferrer'
+							class='btn btn-sm btn-ghost btn-square'><LinkedIn /></a
 						>
 					</div>
 				</div>
 			</section>
 
-			<div class="divider w-full md:w-3/4 mx-auto"></div>
+			<div class='divider w-full md:w-3/4 mx-auto'></div>
 
-			<section id="experience" class="flex flex-col items-center justify-center gap-10">
-				<h1 class="text-center">Experience</h1>
+			<section id='experience' class='flex flex-col items-center justify-center gap-10'>
+				<h1 class='text-center'>Experience</h1>
 
 				<ul
-					class="timeline max-md:timeline-compact timeline-vertical px-10 md:px-5 mx-auto"
-				>
+					class='timeline max-md:timeline-compact timeline-vertical px-10 md:px-5 mx-auto'>
 					<Experience />
 				</ul>
 			</section>
 
-			<div class="divider w-full md:w-3/4 mx-auto"></div>
+			<div class='divider w-full md:w-3/4 mx-auto'></div>
 
-			<section id="projects">
-				<h1 class="text-center">Projects</h1>
+			<section id='projects'>
+				<h1 class='text-center'>Projects</h1>
 
-				<div class="max-w-7xl mx-auto">
-					<div class="min-h-[400px] not-prose px-10 md:px-5 py-10">
+				<div class='max-w-7xl mx-auto'>
+					<div class='min-h-[400px] not-prose px-10 md:px-5 py-10'>
 						<Projects />
 					</div>
 				</div>
@@ -148,30 +144,29 @@ const yearDifference = new Date().getFullYear() - 2023;
 		<footer class={`border-t text-center py-10`}>
 			<small>Created by Paul Richan</small>
 
-			<div class="flex justify-center mt-3 gap-3">
+			<div class='flex justify-center mt-3 gap-3'>
 				<a
-					href="https://github.com/paulrichan"
-					class="btn btn-sm btn-ghost btn-square"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
+					href='https://github.com/paulrichan'
+					class='btn btn-sm btn-ghost btn-square'
+					target='_blank'
+					rel='noopener noreferrer'>
 					<GitHub />
 				</a>
 
 				<a
-					href="https://www.linkedin.com/in/paul-richan-60684623b/"
-					class="btn btn-sm btn-ghost btn-square"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="btn btn-sm btn-ghost btn-square"><LinkedIn /></a
+					href='https://www.linkedin.com/in/paul-richan-60684623b/'
+					class='btn btn-sm btn-ghost btn-square'
+					target='_blank'
+					rel='noopener noreferrer'
+					class='btn btn-sm btn-ghost btn-square'><LinkedIn /></a
 				>
 
 				<a
-					href="https://twitter.com/paul_richan"
-					class="btn btn-sm btn-ghost btn-square"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="btn btn-sm btn-ghost btn-square"><X /></a
+					href='https://twitter.com/paul_richan'
+					class='btn btn-sm btn-ghost btn-square'
+					target='_blank'
+					rel='noopener noreferrer'
+					class='btn btn-sm btn-ghost btn-square'><X /></a
 				>
 			</div>
 		</footer>
